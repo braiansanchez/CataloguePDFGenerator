@@ -1,0 +1,239 @@
+﻿@model Catalogo
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+    <div class="container">
+        
+
+        @{
+            const int maxArticulosEnFila = 4;
+            const int maxArticulosEnPagina = 12;
+            string tipo = "";
+
+            //contadores
+            int articulosEnFila = 1;
+            int articulosEnPagina = 1;
+            
+            }
+        @foreach (Producto producto in Model.Productos)
+        {
+            if (articulosEnFila > maxArticulosEnFila)
+            {
+                <br />
+                articulosEnFila = 1;
+            }
+
+
+            if (tipo != producto.Tipo || articulosEnPagina > maxArticulosEnPagina)
+            {
+                tipo = producto.Tipo;
+                articulosEnFila = 1;
+                articulosEnPagina = 1;
+
+                <p class="breakhere"></p>
+                <div class="col text-center">
+                    <section>
+                        <div class="ribbon">
+                            <span class="ribbon5">@tipo</span>
+                        </div>
+                    </section>
+                </div>
+                <br /><br />
+
+            }
+
+            
+
+            <div class="col w-25 d-table-cell text-center">
+                <img src="@producto.ImageSource" class="rounded float-center" alt="@producto.Tipo"><br />
+                <label><strong>@producto.Descripcion</strong></label>
+                <p>Variedad: @producto.Variedad <br /> Cantidad: @producto.Cantidad @producto.Unidad</p>
+            </div>
+
+
+
+
+
+            articulosEnFila++;
+            articulosEnPagina++;
+        }
+
+    </div>
+    <style>
+        
+
+        .breakhere {
+            page-break-after: always
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+        body {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+section {
+  margin: 0 auto;
+  max-width: 660px;
+  padding: 0 20px;
+}
+h1 {
+  font-weight: normal;
+  position: relative;
+  background: #F4F9FA;
+  width: 50%;
+  color: #F8463F;
+  text-align: center;
+  padding: 10px 20px;
+  margin: 20px auto 40px;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+h1:before, h1:after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  border: 18px solid #DCF4F4;
+}
+h1:before {
+  left: -36px;
+  border-right-width: 18px;
+  border-left-color: transparent;
+}
+h1:after {
+  right: -36px;
+  border-left-width: 18px;
+  border-right-color: transparent;
+}
+h1 span:before, h1 span:after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-color: #A7CECC transparent transparent transparent;
+  top: -6px;
+  transform: rotate(180deg);
+}
+h1 span:before {
+  left: 0;
+  border-width: 6px 0 0 6px;
+}
+h1 span:after {
+  right: 0;
+  border-width: 6px 6px 0 0;
+}
+        .ribbon {
+            width: 48%;
+            height: 188px;
+            position: relative;
+            float: left;
+            margin-bottom: 30px;
+        /*    background: url(https://www.agl-logistics.es/imagenes/distribucion-peninsular-03.jpg);*/
+            background-size: cover;
+            text-transform: uppercase;
+            color: white;
+            font-size: 35px;
+        }
+.ribbon:nth-child(even) {
+  margin-right: 4%;
+}
+@@media (max-width: 500px) {
+  .ribbon {
+    width: 100%;
+  }
+  .ribbon:nth-child(even) {
+    margin-right: 0%;
+  }
+}
+        .ribbon5 {
+            display: block;
+            width: calc(100% + 20px);
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            margin-left: -10px;
+            margin-right: -10px;
+            background: #ff0080;
+            position: relative;
+            top: 20px;
+        }
+.ribbon5:before, .ribbon5:after {
+  content: "";
+  position: absolute;
+}
+            .ribbon5:before {
+                height: 0;
+                width: 0;
+                bottom: -10px;
+                left: 0;
+                border-top: 10px solid #bc2d24;
+                border-left: 10px solid transparent;
+            }
+            .ribbon5:after {
+                height: 0;
+                width: 0;
+                right: 0;
+                bottom: -10px;
+                border-top: 10px solid #bc2d24;
+                border-right: 10px solid transparent;
+            }
+.wrap {
+  width: 100%;
+  height: 188px;
+  position: absolute;
+  top: -8px;
+  left: 8px;
+  overflow: hidden;
+}
+.wrap:before, .wrap:after {
+  content: "";
+  position: absolute;
+}
+.wrap:before {
+  width: 40px;
+  height: 8px;
+  right: 100px;
+  background: #4D6530;
+  border-radius: 8px 8px 0px 0px;
+}
+.wrap:after {
+  width: 8px;
+  height: 40px;
+  right: 0px;
+  top: 100px;
+  background: #4D6530;
+  border-radius: 0px 8px 8px 0px;
+}
+    </style>
+</body>
+</html>
+

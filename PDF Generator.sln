@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCPDFGenerator", "MVCPDFGenerator\MVCPDFGenerator.csproj", "{EE384C9F-7D70-4F77-BA27-CB7285D23F86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelFileReader", "ExcelFileReader\ExcelFileReader.csproj", "{9573D801-1C31-45F0-B6C1-FF000BA03DC7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE384C9F-7D70-4F77-BA27-CB7285D23F86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE384C9F-7D70-4F77-BA27-CB7285D23F86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE384C9F-7D70-4F77-BA27-CB7285D23F86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE384C9F-7D70-4F77-BA27-CB7285D23F86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9573D801-1C31-45F0-B6C1-FF000BA03DC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9573D801-1C31-45F0-B6C1-FF000BA03DC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9573D801-1C31-45F0-B6C1-FF000BA03DC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9573D801-1C31-45F0-B6C1-FF000BA03DC7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01C6D89B-FF3A-4FBF-AD6B-78871486BCD5}
+	EndGlobalSection
+EndGlobal
