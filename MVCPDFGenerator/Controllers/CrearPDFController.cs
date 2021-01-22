@@ -26,8 +26,8 @@ namespace MVCPDFGenerator.Controllers
             //return View(catalogo);
             return new ViewAsPdf("Index", catalogo)
             {
-                //Ver opciones de Rotativa y como usar bootstrap para el estilo
-                /*Usando CSS puro el estilo se puede adaptar bien*/
+                /*Ver opciones de Rotativa y como usar bootstrap para el estilo
+                  Usando CSS puro el estilo se puede adaptar bien*/
 
             };
 
